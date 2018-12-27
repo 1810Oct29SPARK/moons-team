@@ -6,6 +6,7 @@
 
 .properties
 Servers/
+MoonsAPI/target
 .metadata
 bin/
 tmp/
