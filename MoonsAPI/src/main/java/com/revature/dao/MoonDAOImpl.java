@@ -1,14 +1,20 @@
 package com.revature.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.beans.Moon;
+import com.revature.beans.Planet;
+import com.revature.util.ConnectionUtil;
 
 public class MoonDAOImpl implements MoonDAO {
+	
+	private static final String filename = "connection.properties";
 
 	@Override
 	public List<Moon> getAllMoons() {
@@ -24,7 +30,7 @@ public class MoonDAOImpl implements MoonDAO {
 					int planetId = rs.getInt("PLANET_ID");
 					String planetName = rs.getString("PLANET_NAME");
 					String location = rs.getString("PLANET_LOCATION");
-					mn.add(new Planet(planetId, planetName, location));
+					mn.add(new Moon(id, moonName, new Planet(planetId, planetName, location)));
 					
 				}
 			} catch (SQLException e) {
@@ -38,7 +44,7 @@ public class MoonDAOImpl implements MoonDAO {
 	@Override
 	public Moon getMoonById(int id) {
 		
-		moon moon = null;
+		Moon moon = null;
 		try (Connection con = ConnectionUtil.getConnection(filename)) {
 			String sql = "Select * from moons where id = ?";
 			PreparedStatement ps = con.prepareStatement(sql);

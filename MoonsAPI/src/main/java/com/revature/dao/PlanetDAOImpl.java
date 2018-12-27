@@ -63,18 +63,6 @@ public class PlanetDAOImpl implements PlanetDAO {
 	@Override
 	public void updatePlanetById(int id) {
 		
-		try (Connection con = ConnectionUtil.getConnection(filename)) {
-			String sql = "SELECT * FROM PLANETS";
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.executeUpdate();
-				
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
 		
 	}
 

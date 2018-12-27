@@ -4,19 +4,29 @@ import java.util.List;
 
 import com.revature.beans.Moon;
 import com.revature.beans.Planet;
+import com.revature.dao.MoonDAO;
+import com.revature.dao.MoonDAOImpl;
+import com.revature.dao.PlanetDAO;
+import com.revature.dao.PlanetDAOImpl;
 
-public class Service {
+public class SpaceService {
+	
+	
+	MoonDAO md = new MoonDAOImpl();
+	PlanetDAO pd = new PlanetDAOImpl();
 
 
 	public List<Moon> getAllMoons() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Moon> ml = md.getAllMoons();
+		return ml;
+		
 	}
 
 	
 	public Moon getMoonById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Moon moon = md.getMoonById(id);
+		return moon;
 	}
 
 	
@@ -33,14 +43,14 @@ public class Service {
 	
 	
 	public List<Planet> getAllPlanets() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Planet> pl = pd.getAllPlanets();
+		return pl;
 	}
 
 	
 	public Planet getPlanetById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Planet planet = pd.getPlanetById(id);
+		return planet;
 	}
 
 	
