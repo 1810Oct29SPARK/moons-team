@@ -7,7 +7,7 @@ import com.revature.beans.Planet;
 public class PlanetDAOImpl implements PlanetDAO {
 
 	@Override
-	public List<Planet> getAllMoons() {
+	public List<Planet> getAllPlanets() {
 		// TODO Auto-generated method stub
 		return null;
 	}
