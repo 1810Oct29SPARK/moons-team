@@ -2,7 +2,7 @@
 
 Team Members:
 
-Ryan Umanzor
-Nicholas Zaitz
-Jeremy Shropshire
+Ryan Umanzor,
+Nicholas Zaitz,
+Jeremy Shropshire,
 Rebecca Ruiz
