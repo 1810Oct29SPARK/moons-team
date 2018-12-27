@@ -9,6 +9,10 @@ public class Moon {
 		this.planetId = planetId;
 	}
 	
+	public Moon(int id) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private int id;
 	private String name;
 	private Planet planetId;
