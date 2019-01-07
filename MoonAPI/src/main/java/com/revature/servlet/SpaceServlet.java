@@ -12,8 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.beans.Moon;
-import com.revature.dao.MoonDAO;
-import com.revature.dao.MoonDAOImpl;
 import com.revature.service.SpaceService;
 
 /**
@@ -24,7 +22,6 @@ public class SpaceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private SpaceService s;
 	private ObjectMapper om;
-	private MoonDAO md = new MoonDAOImpl();
 	
        
     /**
@@ -36,7 +33,8 @@ public class SpaceServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Moon> ml = md.getAllMoons();
+		HttpSession session = request.getSession();
+		List<Moon> ml = s.getAllMoons();
 		response.getWriter().write(om.writeValueAsString(ml));
 
 	}
