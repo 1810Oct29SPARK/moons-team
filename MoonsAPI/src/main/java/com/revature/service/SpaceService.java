@@ -2,6 +2,8 @@ package com.revature.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.beans.Moon;
 import com.revature.beans.Planet;
 import com.revature.dao.MoonDAO;
@@ -9,6 +11,7 @@ import com.revature.dao.MoonDAOImpl;
 import com.revature.dao.PlanetDAO;
 import com.revature.dao.PlanetDAOImpl;
 
+@Service(value="spaceService")
 public class SpaceService {
 	
 	
